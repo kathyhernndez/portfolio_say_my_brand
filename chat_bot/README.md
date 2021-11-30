@@ -2,7 +2,7 @@ CHATBOT WEB FOR HOTEL PAGE
 .............
 JSON CORPUS FOR THE CHATBOT WEB HOTEL
 
-Here you find a corpus for use in the training chatbot web for a web page the hotel.
+Here you find a corpus for use in the training chatbot web for a web page hotel.
 
 KEY WORDS FOR READ THIS JSON:
 "intents": this included a dic of key words and responses.
@@ -25,7 +25,7 @@ You can run this app:
 
 1. Clone the repository
 2. Install Docker in your pc
-3. Inside of directory of chatbot run docker-compose up -d
+3. Inside of directory of chatbot run: docker-compose up -d
 4. Flow the url for view the chatbot interface
 5. Close the serve with command ctrl + c
 
@@ -41,6 +41,6 @@ Container of image docker in python
 
 ...........................
 
-This chatbot is configure for used in the web app hotel, and will be implementing with change of corpus (intents.json) and adapter for your use.
+This chatbot is configure for used in the web app hotel, and will be implementing with change of corpus (intents.json) and adapter.
 
 
