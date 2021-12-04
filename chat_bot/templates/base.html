@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +16,8 @@
                         <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
                     </div>
                     <div class="chatbox__content--header">
-                        <h4 class="chatbox__heading--header">Chat Support</h4>
-                        <p class="chatbox__description--header">HotelBot, Support Client</p>
+                        <h4 class="chatbox__heading--header">Chat support</h4>
+                        <p class="chatbox__description--header">Hola. Mi nombre es HotelBot. Como puedo ayudarte?</p>
                     </div>
                 </div>
                 <div class="chatbox__messages">
@@ -29,13 +29,14 @@
                 </div>
             </div>
             <div class="chatbox__button">
-                <button><img src="./images/chatbox-icon.svg" /></button>
+                <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
             </div>
         </div>
     </div>
 
-    <script src="./app.js">
+    <script $SCRIPT_ROOT={{request.script_root|tojson}};>
     </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 
 </body>
 
