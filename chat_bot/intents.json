@@ -38,8 +38,7 @@
                 "Donde puedo modificar la resevacion?"
             ],
             "responses": [
-                "Sí, sí puedes. Pero ten en cuenta que dicha anulación puede conllevar unos gastos de cancelación. Al realizar la reserva, se informa de la política de cancelación, o bien ésta figura en las condiciones generales.",
-                "Estos gastos de cancelación son variables según el destino, el proveedor, la tarifa reservada y las fechas de antelación a la anulación. Para anular o modificar una reserva, se puede mandar un e - mail a través del apartado CONTACTO, a través del apartado MIS RESERVAS, o llamando directamente al#########."
+                "Sí, sí puedes. Pero ten en cuenta que dicha anulación puede conllevar unos gastos de cancelación. Al realizar la reserva, se informa de la política de cancelación, o bien ésta figura en las condiciones generales. Estos gastos de cancelación son variables según el destino, el proveedor, la tarifa reservada y las fechas de antelación a la anulación. Para anular o modificar una reserva, se puede mandar un e - mail a través del apartado CONTACTO, a través del apartado MIS RESERVAS, o llamando directamente al#########."
             ]
         },
         {
@@ -64,8 +63,7 @@
                 "¿Tengo que avisar al hotel si preveo llegar más tarde de las 18.00 hrs ? "
             ],
             "responses": [
-                "Como norma general las habitaciones podrán ser utilizadas a partir de las 14 horas del día de llegada y deberán quedar libres antes de las 12 horas del día de salida. Ciertos hoteles podrás permitir la entrada antes del horario previsto, así como la salida varias horas después... pero teniendo en cuenta que dependerá de la política establecida por el mismo hotel. ",
-                "Es necesario que avises directamente al hotel. En el bono figura el número de teléfono, de la hora prevista de tu llegada, ya que en caso contrario pueden poner a disposición de otros clientes la habitación."
+                "Como norma general las habitaciones podrán ser utilizadas a partir de las 14 horas del día de llegada y deberán quedar libres antes de las 12 horas del día de salida. Ciertos hoteles podrás permitir la entrada antes del horario previsto, así como la salida varias horas después... pero teniendo en cuenta que dependerá de la política establecida por el mismo hotel. "
             ]
         },
         {
@@ -76,9 +74,200 @@
                 "¿Cómo solicito una cuna o una habitación con características especiales? "
             ],
             "responses": [
-                " Sí, es necesario incluir a todos los pasajeros.Por pasajero se entiende toda aquella persona física que vaya a acudir al hotel reservado, indistintamente de que sea bebé, niño o adulto. El proveedor o el hotel tienen que tener una previsión de las personas y edades de los ocupantes, puesto que hay algunos tipos de habitación en las cuales no caben una cama extra o cuna.",
-                " Se tienen que indicar como una persona más, indicando la edad que tendrá el niño/bebé cuando se inicien los servicios de la reserva. Si el bebé tiene sólo meses, hay que indicar la edad de 1 año que hará referencia a todos aquellos bebés desde 1 día hasta 24 meses. En el caso de los niños, deberá indicarse la edad correspondiente.",
-                "En el caso que requieras un servicio especial: cuna, comida sin gluten, cama matrimonial, habitación para fumadores, etc; deberás solicitarlo por e-mail indicando el localizador de la reserva o a través del 902 366847. Todos estos servicios pueden llevar un cargo adicional y están sujetos a disponibilidad."
+                " Sí, es necesario incluir a todos los pasajeros. Por pasajero se entiende toda aquella persona física que vaya a acudir al hotel reservado, indistintamente de que sea bebé, niño o adulto. El proveedor o el hotel tienen que tener una previsión de las personas y edades de los ocupantes, puesto que hay algunos tipos de habitación en las cuales no caben una cama extra o cuna."
+            ]
+        },
+        {
+            "tag": "rooms",
+            "patterns": [
+                "habitaciones dobles",
+                "¿Qué diferencia hay entre una habitación doble y una habitación doble con 2 camas? ",
+                "¿Cómo solicito una cuna o una habitación con características especiales? "
+            ],
+            "responses": [
+                "La diferencia está en que una habitación doble se trata de una habitación estándar que tiene una cama doble, mientras que una habitación doble con 2 camas cuenta con dos camas individuales. Si se trata de una habitación doble, 1 o 2 camas, puede referirse a cualquiera de las dos opciones anteriores. Las fotos de las habitaciones de hotel que aparecen en la web solo son para dar una idea general. Ha de tener en cuenta que el tamaño, el estilo, mobiliario y servicios pueden variar."
+            ]
+        },
+        {
+            "tag": "pays",
+            "patterns": [
+                "¿Cómo puedo pagar una reserva de hotel?",
+                "pagar reserva"
+            ],
+            "responses": [
+                "Al finalizar la reserva te mostraremos las diferentes formas de pago de la reserva. Puedes pagar mediante tarjeta de crédito, de débito, transferencia online, transferencia bancaria, paypal... En ocasiones y según la antelación con que hagas la reserva, no todas estas opciones estarán disponibles. Normalmente abonarás el 25% a la hora de realizar la reserva y el importe restante 30 días antes de la entrada al hotel. En ocasiones podrás beneficiarte de promociones especiales las cuales puedan modificar los importes y fechas de pago, los cuales siempre te figurarán indicados en la web. En el caso de que la reserva de hotel sea de pago directamente en el hotel, la cual vendrá claramente indicada como tal en la reserva, se pedirán los datos de tarjeta de crédito únicamente como garantía. En el hotel puedes pagar con la misma tarjeta, con una diferente o en efectivo... Eso sí, si se trata de una tarifa no reembolsable el hotel te cargará directamente el importe de tu reserva."
+            ]
+        },
+        {
+            "tag": "email",
+            "patterns": [
+                "Qué hago si no recibo el e-mail de confirmación de reserva de hotel?",
+                "no recibi correo de confirmacion de reserva",
+                "Que hago si no recibo confirmacion de reserva"
+            ],
+            "responses": [
+                "Podría ser que el e - mail enviado por #### estuviera en tu bandeja de correo no deseado. En cualquier caso, si se te ha confirmado tu reserva en pantalla y te hemos dado un localizador, puedes acceder a los detalles de tu reserva y al bono a través de Mis Reservas: También puedes ponerte en contacto con nosotros a través del apartado CONTACTO para confirmar los datos de tu reserva."
+            ]
+        },
+        {
+            "tag": "cost",
+            "patterns": [
+                "¿Qué incluye el precio de una reserva de hotel?"
+            ],
+            "responses": [
+                "El precio incluye el alojamiento en el establecimiento para los pasajeros y según tipo de acomodación y régimen alimenticio que figura en la documentación;además de los impuestos IVA, IGIC."
+            ]
+        },
+        {
+            "tag": "founds",
+            "patterns": [
+                "¿Qué hago si en el hotel contratado no hay constancia de mi reserva?"
+            ],
+            "responses": [
+                "Debes ponerte en contacto con nosotros a través del teléfono que te viene indicado de asistencia en viaje, junto al bono del hotel, para verificar el estado de tu reserva. Si confirmamos que tienes una reserva, haremos las gestiones oportunas con el proveedor para resolver la posible incidencia y te informaremos con la mayor brevedad posible."
+            ]
+        },
+        {
+            "tag": "others",
+            "patterns": [
+                "como reservo un hotel para otra persona?",
+                "reservar para otros",
+                "Cómo realizo una reserva de hotel para otra persona?"
+            ],
+            "responses": [
+                "Al introducir los datos de la reserva, en el campo titular colocarás el nombre de la persona que se alojará en el hotel."
+            ]
+        },
+        {
+            "tag": "stay",
+            "patterns": [
+                "puedo ampliar la estancia",
+                "puedo reducir la estancia",
+                "añadir mas dias a mi estancia",
+                "¿Puedo ampliar o reducir la estancia en el hotel una vez en destino?"
+            ],
+            "responses": [
+                "Sí es posible, pero siempre teniendo en cuenta que: En caso de abandonar el hotel antes de la fecha prevista. Aconsejamos solicitar al hotel un escrito formal notificando la no facturación de los días no disfrutados y remitirnos una copia para su gestión. En caso de ampliar la estancia una vez ya en destino, contacta con nosotros y te informaremos sobre la disponibilidad y tarifa del hotel. Deberás realizar el pago de la ampliación de la estancia mediante tarjeta de crédito."
+            ]
+        },
+        {
+            "tag": "pets",
+            "patterns": [
+                "aceptan mascotas?",
+                "puedo llevar a mi perro?",
+                "puedo llevar a mi gato?",
+                "y si tengo un leon?",
+                "¿Puedo alojarme en un hotel con mi mascota?"
+            ],
+            "responses": [
+                "Por supuesto, en ##### sabemos lo importante que son estos pequeños amigos para ti. Por lo tanto, no habrá problema si llevas a tu mascota."
+            ]
+        },
+        {
+            "tag": "documents",
+            "patterns": [
+                "debo mostrar mi pasaporte?",
+                "¿Qué documentación debo presentar a mi entrada al hotel?",
+                "necesitan mi DNI?",
+                "documentacion necesaria para alojarme?",
+                "documentos necesarios para la reserva?"
+            ],
+            "responses": [
+                "Cuando has realizado la reserva te enviamos una confirmación de la misma, con todos los servicios detallados. Si has pagado el 100% de la reserva, te llegará el correspondiente bono por correo electrónico, que será el documento que deberás imprimir y presentar a tu entrada al hotel. No es necesario presentar facturas ni ningún otro documento, ya que lo que exige el hotel es dicho bono, junto al DNI o pasaportes de los titulares de la reserva."
+            ]
+        },
+        {
+            "tag": "installation",
+            "patterns": [
+                "tienen areas comunes?",
+                "cuales son las instalaciones del hotel?",
+                "tienen piscina?",
+                "hay ginmnasio?",
+                "tiene bar?",
+                "hay area buffet?",
+                "tiene lobbie?",
+                "¿Cómo puedo saber las instalaciones con las que cuenta el hotel?"
+            ],
+            "responses": [
+                "El hotel #### cuenta con: Piscina, lobbie, gimnasio, ba, restaurant, buffet."
+            ]
+        },
+        {
+            "tag": "pay",
+            "patterns": [
+                "debo pagar al reservar?",
+                "¿Cuándo he de pagar la reserva de hotel?"
+            ],
+            "responses": [
+                "Siempre se paga el 100% al realizar la reserva, no importa la antelación con que se haga de la misma."
+            ]
+        },
+        {
+            "tag": "onday",
+            "patterns": [
+                "aceptan reservas para el mismo dia?",
+                "puedo reservar de ultimo momento?",
+                "¿Puedo realizar reservas para el mismo día?"
+            ],
+            "responses": [
+                "Sí, tan solo deberás realizar la búsqueda en la página web, realizar el pago total y te enviaremos el bono que debes entregar... cuando llegues al hotel tu habitación estará lista."
+            ]
+        },
+        {
+            "tag": "old",
+            "patterns": [
+                "si soy menor de edad puedo reservar un hotel?",
+                "¿Cuál es la edad mínima para poder reservar un hotel? "
+            ],
+            "responses": [
+                "Para reservar un hotel a través de nuestra página web, debe tener como mínimo 18 años (21 años en EE.UU) El hotel puede negar la admisión de un grupo de personas que viajan juntas si no hay por lo menos un adulto con 18 años cumplidos (21 en el caso de EE.UU). En este caso Eurobuilding no acepta ningún tipo de responsabilidad."
+            ]
+        },
+        {
+            "tag": "transport",
+            "patterns": [
+                "traslado al hotel",
+                "traslado desde el hotel",
+                "transporte",
+                "servicio de taxis",
+                "¿Cómo puedo saber si el hotel ofrece servicio de traslados y cómo he de contratarlo?"
+            ],
+            "responses": [
+                "Si el hotel ofrece servicio de traslados lo verás reflejado en nuestra página web. Cuando hayas realizado en firme la reserva deberás ponerte en contacto con el hotel para solicitar dicho servicio, puede que te soliciten los datos del vuelo."
+            ]
+        },
+        {
+            "tag": "parking",
+            "patterns": [
+                "servicio de parking",
+                "servicios",
+                "parking",
+                "¿Qué he de hacer si quiero contratar el servicio de parking del hotel?"
+            ],
+            "responses": [
+                "Una vez tengas realizada la reserva deberás ponerte en contacto directamente con el hotel con los datos que te aparecerán en el bono, y abonar el importe correspondiente en destino."
+            ]
+        },
+        {
+            "tag": "setting",
+            "patterns": [
+                "tienen aire acondicionado?",
+                "tienen calefaccion??",
+                "¿Estará disponible el aire acondicionado o la calefacción en el hotel?"
+            ],
+            "responses": [
+                "Si, por supuesto en #### ofrecemos el mejor servicio."
+            ]
+        },
+        {
+            "tag": "covid",
+            "patterns": [
+                "tienen medidas de bioseguridad?",
+                "¿Cómo afecta el Coronavirus a mi reserva de hotel?",
+                "¿Qué medidas de bioseguridad está tomando la cadena hotelera?"
+            ],
+            "responses": [
+                "Estamos aplicando condiciones flexibles de modificación y cancelación de las reservas activas cuyo origen o destino coincida con zonas afectadas. Estamos en constante contacto con los hoteles para conocer las políticas aplicables tanto a las reservas activas como a las futuras. Para las nuevas reservas, se pueden cancelar sin gastos adicionales hasta 30 días antes del inicio de la estancia en las opciones de alojamiento que así lo indiquen durante el proceso de reserva. Estamos tomando medidas para la prevención del COVID - 19 en nuestros establecimientos y garantizar la seguridad de nuestros huéspedes.A continuación, encontrarás los protocolos y normas que estamos implementando: -Formación en normas de higiene y salud alimentaria a los empleados. - Equipos de protección individual y de higiene específicos para los trabajadores. - Check - in digital y fast check - out para evitar aglomeraciones y tiempos de espera en la recepción - Limpieza y desinfección constante tanto de zonas comunes como de las habitaciones. - Nuevo sistema de señalética para informar sobre las medidas de prevención y marcar la distancia a mantener entre personas. - Colocación de dispensadores de gel hidroalcohólico en las zonas comunes. - Reducción de aforos en restaurantes, bares, piscinas y otras zonas comunes. - Sistema de reserva previa de hamacas para la zona de piscinas. - Minibar a la carta.Se eliminan las amenities y el minibar de las habitaciones y este funciona bajo petición."
             ]
         }
     ]
