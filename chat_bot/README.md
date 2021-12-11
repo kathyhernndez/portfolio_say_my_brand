@@ -1,4 +1,6 @@
 CHATBOT WEB FOR HOTEL PAGE
+
+Design, development, implementation, training of a web chatbot, based on Python using the flask framework, the nltk, nlp, pytorch, numpy libraries to create the neural network and the functioning of the chatbot, sending requests through the server with protocol HTTP (GET, POST)
 .............
 JSON CORPUS FOR THE CHATBOT WEB HOTEL
 
