@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Booking from "../Components/Booking";
 import Header from "../Components/Header";
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
       </Head>
 
         <Header/>
-
+        {/* HeroImg */}
+        <Booking />
     </div>
   );
 }
