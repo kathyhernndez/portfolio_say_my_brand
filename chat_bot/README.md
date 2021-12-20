@@ -15,6 +15,7 @@ KEY WORDS FOR READ THIS JSON:
 
 DOCKER IMAGE FLASK SERVER
 This is a container DOCKER for running a Flask server for implementing the chatbot interface, conect to the container of React in the frontend APP
+In construction
 
 ........................
 
@@ -44,5 +45,19 @@ Container of image docker in python
 ...........................
 
 This chatbot is configure for used in the web app hotel, and will be implementing with change of corpus (intents.json) and adapter.
+
+...................................
+
+To run this chat bot:
+
+1. Download or clone the repository
+2. create a virtual environment
+3. Install the dependencies of the requirements.txt file
+4. Run the training application: train.py
+5. Run to test the chatbot: chat.py
+6. Run the flask server: app.py
+7. test the graphical interfaces.
+
+#Note: the connections to the frontend interface are already made in this project with js, and the methods used are htt (post, get)
 
 
