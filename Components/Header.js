@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import { MenuIcon, UserCircleIcon} from '@heroicons/react/solid';
+import { useRouter } from 'next/router';
 
 const Header = () => {
+
+  const router = useRouter();
+
   return (
     <div>
       <header className="sticky top-0 z-10 grid grid-cols-3 shadow-md p-5 bg-purple-800 text-white md:px-10">
         <div className="relative flex items-center h-10 cursor-pointer my-auto">
           <Image 
+            onClick={() => router.push('/')}
             src="https://i.imgur.com/IFs5niC.png" 
             layout="fill" 
             objectFit="contain"

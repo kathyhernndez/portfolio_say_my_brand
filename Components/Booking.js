@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Image from 'next/image';
 import { ChevronDownIcon, PlusIcon, MinusIcon } from "@heroicons/react/outline";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
-import EuroRoomsData from '../EuroBuData/EuroRoomsData.json';
+import { useRouter } from "next/router";
+
 
 const Booking = () => {
 
@@ -13,6 +13,7 @@ const Booking = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [adults, setAdults] = useState(1);
   const [kids, setKids] = useState(0);
+  const router = useRouter();
 
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate);
@@ -35,6 +36,18 @@ const Booking = () => {
   // Cancel Booking close Date Range Picker and Number of Guest inputs
   const cancelBookinn = () => {
     setDatePicker(false);
+  }
+  // roomPage function will open the RoomPage
+  const roomPage = () => {
+    router.push({
+      pathname: "/rooms",
+      query: {
+        adults,
+        kids,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString()
+      }
+    });
   }
 
   return (
@@ -106,28 +119,13 @@ const Booking = () => {
               Continue
             </button>
           </div>
-          <div>
-            {EuroRoomsData.map((val, key) => {
-              return (
-                <div>
-                  <div className="text-xl text-center font-bold mb-2"> {val.room_title} </div>
-                  <div className="relative flex items-center h-60 cursor-pointer my-auto"> 
-                    <Image
-                      src={val.room_image.url}
-                      alt={val.room_image.alt}
-                      layout="fill" 
-                      objectFit="contain"
-                    /> 
-                  </div>
-                  <div> {val.room_description} </div>
-                </div>
-              )
-            })}
-          </div>
         </>
       )}
 
-      <button className="bg-purple-800 text-white rounded-lg p-1 mt-1">
+      <button 
+        onClick={roomPage}
+        className="bg-purple-800 text-white rounded-lg p-1 mt-1"
+      >
         RESERVAR
       </button>
     </div>
