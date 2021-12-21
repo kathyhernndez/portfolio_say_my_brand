@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Image from 'next/image';
 import { ChevronDownIcon, PlusIcon, MinusIcon } from "@heroicons/react/outline";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
+import EuroRoomsData from '../EuroBuData/EuroRoomsData.json';
 
 const Booking = () => {
 
@@ -103,6 +105,24 @@ const Booking = () => {
             >
               Continue
             </button>
+          </div>
+          <div>
+            {EuroRoomsData.map((val, key) => {
+              return (
+                <div>
+                  <div className="text-xl text-center font-bold mb-2"> {val.room_title} </div>
+                  <div className="relative flex items-center h-60 cursor-pointer my-auto"> 
+                    <Image
+                      src={val.room_image.url}
+                      alt={val.room_image.alt}
+                      layout="fill" 
+                      objectFit="contain"
+                    /> 
+                  </div>
+                  <div> {val.room_description} </div>
+                </div>
+              )
+            })}
           </div>
         </>
       )}
