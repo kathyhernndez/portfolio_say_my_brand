@@ -18,8 +18,10 @@ const Header = () => {
             objectPosition="left"
             />
         </div>
-        <div className='flex items-center justify-center'>
-            <h1 className="text-xl cursor-pointer">EUROBUILDING</h1>
+        <div className='flex items-center justify-center gap-1'>
+            <input className='bg-transparent border-2 w-20 text-sm px-1 text-center rounded-full' type="text" value={`Check in`}  />
+            <input className='bg-transparent border-2 w-20 text-sm px-1 text-center rounded-full' type="text" value={`Check out`}  />
+            <input className='bg-transparent border-2 w-20 text-sm px-1 text-center rounded-full' type="text" value={`Guests`}  />
         </div>
         <div className='flex items-center justify-end'>
           <div className='flex items-center border-2 p-2 rounded-full'>

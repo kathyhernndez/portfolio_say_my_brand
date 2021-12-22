@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import Header from "../Components/Header";
 import RoomSlider from "../Components/RoomSlider";
+import { format } from 'date-fns';
+
 
 const Rooms = ({ getRooms }) => {
 
@@ -8,6 +10,11 @@ const Rooms = ({ getRooms }) => {
 
   //ES6 Destructuring
   const { adults, kids, startDate, endDate } = router.query;
+  const guests = parseInt(adults) + parseInt(kids);
+  // Formatted Start and endd Date
+  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
+  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
+  const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   // Users data provide in the Home page
   console.log(adults)
@@ -19,7 +26,7 @@ const Rooms = ({ getRooms }) => {
       <Header />
       <main>
         <section>
-          <p className="text-center mt-4 font-semibold text-xl">Number of Guests {adults} adults {kids > 0? `- ${kids} Kids` : "" } </p>
+          <p className="text-center mt-4 font-semibold text-lg"> {guests} guests  - {range} </p>
           <div className="flex flex-col gap-5 m-5">
             {getRooms?.map(({ id, room_title, room_description, room_image }) => (
               <RoomSlider

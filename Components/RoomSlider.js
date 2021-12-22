@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const RoomSlider = ({ room_title, room_description, room_image }) => {
   return (
-    <div className='p-5 border-2 rounded-2xl space-y-2 shadow-xl'>
+    <div className='p-5 border-2 rounded-2xl space-y-2 shadow-xl cursor-pointer hover:shadow-2xl hover:opacity-70 transition duration-300 ease-out'>
       <div className="text-xl text-center font-bold">
         {room_title}
       </div>
