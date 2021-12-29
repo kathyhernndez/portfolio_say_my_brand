@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import Header from "../Components/Header";
 import RoomSlider from "../Components/RoomSlider";
-import { format } from 'date-fns';
+import { format } from "date-fns";
+import { useEffect, useState } from "react";
 
-
-const Rooms = ({ getRooms }) => {
-
+const Rooms = () => {
   const router = useRouter();
+  const [roomList, setRoomList] = useState([]);
 
   //ES6 Destructuring
   const { adults, kids, startDate, endDate } = router.query;
@@ -17,25 +17,39 @@ const Rooms = ({ getRooms }) => {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   // Users data provide in the Home page
-  console.log(adults)
-  // Data requested with all the Room's informartion
-  console.log(getRooms);
+  useEffect(() => {
+    window
+      .fetch("/api/rooms")
+      .then((res) => res.json())
+      .then(({ rooms }) => {
+        setRoomList(rooms);
+      });
+  }, []);
+
+  console.log(adults);
+  // Data requested with all the Room's information
+  console.log(roomList);
 
   return (
     <div>
       <Header />
       <main>
         <section>
-          <p className="text-center mt-4 font-semibold text-lg"> {guests} guests  - {range} </p>
+          <p className="text-center mt-4 font-semibold text-lg">
+            {" "}
+            {guests} guests - {range}{" "}
+          </p>
           <div className="flex flex-col gap-5 m-5">
-            {getRooms?.map(({ id, room_title, room_description, room_image }) => (
-              <RoomSlider
-                key={id}
-                room_title={room_title}
-                room_description={room_description}
-                room_image={room_image}
-              />
-            ))}
+            {roomList?.map(
+              ({ id, room_title, room_description, room_image }) => (
+                <RoomSlider
+                  key={id}
+                  room_title={room_title}
+                  room_description={room_description}
+                  room_image={room_image}
+                />
+              )
+            )}
           </div>
         </section>
       </main>
@@ -45,12 +59,14 @@ const Rooms = ({ getRooms }) => {
 
 export default Rooms;
 
-export async function getServerSideProps() {
-  const getRooms = await fetch("https://api.jsonbin.io/b/61c1595878cc9429607cc3df").then(res => res.json());
+// export async function getServerSideProps() {
+//   const getRooms = await fetch(
+//     "https://api.jsonbin.io/b/61c1595878cc9429607cc3df"
+//   ).then((res) => res.json());
 
-  return{
-    props: {
-      getRooms
-    }
-  }
-}
+//   return {
+//     props: {
+//       getRooms,
+//     },
+//   };
+// }
