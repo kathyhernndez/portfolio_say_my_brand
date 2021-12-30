@@ -5,9 +5,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 import { useRouter } from "next/router";
 
-
 const Booking = () => {
-
   const [datePicker, setDatePicker] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -28,15 +26,15 @@ const Booking = () => {
 
   // Decrement number of adults and kids
   const decrementAdults = () => {
-    setAdults( adults > 1? adults - 1 : adults=1);
-  }
+    setAdults(adults > 1 ? adults - 1 : (adults = 1));
+  };
   const decrementKids = () => {
-    setKids( kids > 1? kids - 1 : kids=0);
-  }
+    setKids(kids > 1 ? kids - 1 : (kids = 0));
+  };
   // Cancel Booking close Date Range Picker and Number of Guest inputs
   const cancelBookinn = () => {
     setDatePicker(false);
-  }
+  };
   // roomPage function will open the RoomPage
   const roomPage = () => {
     router.push({
@@ -45,10 +43,10 @@ const Booking = () => {
         adults,
         kids,
         startDate: startDate.toISOString(),
-        endDate: endDate.toISOString()
-      }
+        endDate: endDate.toISOString(),
+      },
     });
-  }
+  };
 
   return (
     <div className="p-5 flex flex-col gap-2">
@@ -76,7 +74,7 @@ const Booking = () => {
             onChange={handleSelect}
           />
           <div className="flex justify-between items-center border-b border-purple-800 py-2">
-          <h2 className="text-xl font-semibold">Huéspedes</h2>
+            <h2 className="text-xl font-semibold">Huéspedes</h2>
             <p>Adultos</p>
             <div className="flex">
               <div className="flex items-center gap-5">
@@ -107,22 +105,15 @@ const Booking = () => {
             </div>
           </div>
           <div className="flex">
-            <button 
-              className="flex-grow text-gray-500"
-              onClick={cancelBookinn}
-            >
+            <button className="flex-grow text-gray-500" onClick={cancelBookinn}>
               Cancel
             </button>
-            <button 
-              className="flex-grow text-purple-800"
-            >
-              Continue
-            </button>
+            <button className="flex-grow text-purple-800">Continue</button>
           </div>
         </>
       )}
 
-      <button 
+      <button
         onClick={roomPage}
         className="bg-purple-800 text-white rounded-lg p-1 mt-1"
       >

@@ -11,9 +11,9 @@ export default function Home() {
         <link rel="icon" href="https://i.imgur.com/v8S1WPT.png" />
       </Head>
 
-        <Header/>
-        {/* HeroImg */}
-        <Booking />
+      <Header />
+      {/* HeroImg */}
+      <Booking />
     </div>
   );
 }
