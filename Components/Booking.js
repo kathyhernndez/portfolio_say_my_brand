@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { ChevronDownIcon, PlusIcon, MinusIcon } from "@heroicons/react/outline";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRangePicker } from "react-date-range";
+// import "react-date-range/dist/styles.css"; // main style file
+// import "react-date-range/dist/theme/default.css"; // theme css file
+// import { DateRangePicker } from "react-date-range";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useRouter } from "next/router";
 
 const Booking = () => {
   const [datePicker, setDatePicker] = useState(false);
+  // const [startDate, setStartDate] = useState(new Date());
+  // const [endDate, setEndDate] = useState(new Date());
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+
   const [adults, setAdults] = useState(1);
   const [kids, setKids] = useState(0);
   const router = useRouter();
@@ -18,11 +22,11 @@ const Booking = () => {
     setEndDate(ranges.selection.endDate);
   };
 
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    key: "selection",
-  };
+  // const selectionRange = {
+  //   startDate: startDate,
+  //   endDate: endDate,
+  //   key: "selection",
+  // };
 
   // Decrement number of adults and kids
   const decrementAdults = () => {
@@ -66,13 +70,11 @@ const Booking = () => {
 
       {datePicker && (
         <>
-          <DateRangePicker
-            className="mx-auto"
-            ranges={[selectionRange]}
-            minDate={new Date()}
-            rangeColors={["#6A0DAD"]}
-            onChange={handleSelect}
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
           />
+
           <div className="flex justify-between items-center border-b border-purple-800 py-2">
             <h2 className="text-xl font-semibold">Huéspedes</h2>
             <p>Adultos</p>
