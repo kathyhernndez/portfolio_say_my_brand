@@ -1,25 +1,29 @@
 import { useState } from "react";
 import { ChevronDownIcon, PlusIcon, MinusIcon } from "@heroicons/react/outline";
-// import "react-date-range/dist/styles.css"; // main style file
-// import "react-date-range/dist/theme/default.css"; // theme css file
-// import { DateRangePicker } from "react-date-range";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { format } from "date-fns";
 import { useRouter } from "next/router";
 
 const Booking = () => {
   const [datePicker, setDatePicker] = useState(false);
-  // const [startDate, setStartDate] = useState(new Date());
-  // const [endDate, setEndDate] = useState(new Date());
   const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(null);
+
+  const formattedStartDate = format(new Date(startDate), "dd/MM/yy");
+  const formattedEndDate = format(new Date(endDate), "dd/MM/yy");
+
+  console.log(startDate);
+  console.log(endDate);
 
   const [adults, setAdults] = useState(1);
   const [kids, setKids] = useState(0);
   const router = useRouter();
 
-  const handleSelect = (ranges) => {
-    setStartDate(ranges.selection.startDate);
-    setEndDate(ranges.selection.endDate);
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
   };
 
   // const selectionRange = {
@@ -61,25 +65,34 @@ const Booking = () => {
           className="flex gap-5 border-2 border-purple-800 rounded-lg px-3"
           onClick={() => setDatePicker(!datePicker)}
         >
-          Check in <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
+          Check in {formattedStartDate}{" "}
+          <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
         </span>
         <span className="flex gap-5 border-2 border-purple-800 rounded-lg px-3">
-          Check out <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
+          Check out {formattedEndDate}
+          <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
         </span>
       </div>
 
       {datePicker && (
         <>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-          />
+          <div className="text-center">
+            <DatePicker
+              selected={startDate}
+              onChange={onChange}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              inline
+              minDate={new Date()}
+            />
+          </div>
 
-          <div className="flex justify-between items-center border-b border-purple-800 py-2">
-            <h2 className="text-xl font-semibold">Huéspedes</h2>
-            <p>Adultos</p>
-            <div className="flex">
-              <div className="flex items-center gap-5">
+          <h2 className="text-xl font-semibold text-center">Huéspedes</h2>
+          <div className="flex justify-center border-b border-purple-800 py-2">
+            <div className="flex gap-3">
+              <div className="flex items-center gap-2">
+                <p>Adultos</p>
                 <PlusIcon
                   className="h-6 cursor-pointer border-2 border-purple-800 rounded-full p-1"
                   onClick={() => setAdults((adults += 1))}
@@ -90,10 +103,9 @@ const Booking = () => {
                   onClick={decrementAdults}
                 />
               </div>
-            </div>
-            <p>Niños</p>
-            <div>
-              <div className="flex items-center gap-5">
+
+              <div className="flex items-center gap-2">
+                <p>Niños</p>
                 <PlusIcon
                   className="h-6 cursor-pointer border-2 border-purple-800 rounded-full p-1"
                   onClick={() => setKids((kids += 1))}
