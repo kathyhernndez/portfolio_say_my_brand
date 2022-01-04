@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDownIcon, PlusIcon, MinusIcon } from "@heroicons/react/outline";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import { useRouter } from "next/router";
+import RoomSlider from "./RoomSlider";
 
 const Booking = () => {
   const [datePicker, setDatePicker] = useState(false);
+  const [roomsSlider, setRoomsSlider] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
+  const [roomList, setRoomList] = useState([]);
 
-  const formattedStartDate = format(new Date(startDate), "dd/MM/yy");
-  const formattedEndDate = format(new Date(endDate), "dd/MM/yy");
+  // const formattedStartDate = format(new Date(startDate), "dd/MM/yy");
+  // const formattedEndDate = format(new Date(endDate), "dd/MM/yy");
 
   console.log(startDate);
   console.log(endDate);
@@ -26,12 +29,6 @@ const Booking = () => {
     setEndDate(end);
   };
 
-  // const selectionRange = {
-  //   startDate: startDate,
-  //   endDate: endDate,
-  //   key: "selection",
-  // };
-
   // Decrement number of adults and kids
   const decrementAdults = () => {
     setAdults(adults > 1 ? adults - 1 : (adults = 1));
@@ -41,6 +38,7 @@ const Booking = () => {
   };
   // Cancel Booking close Date Range Picker and Number of Guest inputs
   const cancelBookinn = () => {
+    setRoomsSlider(false);
     setDatePicker(false);
   };
   // roomPage function will open the RoomPage
@@ -55,6 +53,15 @@ const Booking = () => {
       },
     });
   };
+  // Users data provide in the Home page
+  useEffect(() => {
+    window
+      .fetch("/api/rooms")
+      .then((res) => res.json())
+      .then(({ rooms }) => {
+        setRoomList(rooms);
+      });
+  }, []);
 
   return (
     <div className="p-5 flex flex-col gap-2">
@@ -65,11 +72,10 @@ const Booking = () => {
           className="flex gap-5 border-2 border-purple-800 rounded-lg px-3"
           onClick={() => setDatePicker(!datePicker)}
         >
-          Check in {formattedStartDate}{" "}
-          <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
+          Check in <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
         </span>
         <span className="flex gap-5 border-2 border-purple-800 rounded-lg px-3">
-          Check out {formattedEndDate}
+          Check out
           <ChevronDownIcon className="h-6 cursor-pointer" />{" "}
         </span>
       </div>
@@ -78,13 +84,16 @@ const Booking = () => {
         <>
           <div className="text-center">
             <DatePicker
+              className="text-center"
               selected={startDate}
               onChange={onChange}
               startDate={startDate}
               endDate={endDate}
+              minDate={new Date()}
               selectsRange
               inline
-              minDate={new Date()}
+              // isClearable={true}
+              // placeholderText="Seleccione la fecha"
             />
           </div>
 
@@ -118,11 +127,27 @@ const Booking = () => {
               </div>
             </div>
           </div>
+          {roomsSlider &&
+            roomList?.map(
+              ({ id, room_title, room_description, room_image }) => (
+                <RoomSlider
+                  key={id}
+                  room_title={room_title}
+                  room_description={room_description}
+                  room_image={room_image}
+                />
+              )
+            )}
           <div className="flex">
             <button className="flex-grow text-gray-500" onClick={cancelBookinn}>
               Cancel
             </button>
-            <button className="flex-grow text-purple-800">Continue</button>
+            <button
+              onClick={() => setRoomsSlider(!roomsSlider)}
+              className="flex-grow text-purple-800"
+            >
+              Continue
+            </button>
           </div>
         </>
       )}
