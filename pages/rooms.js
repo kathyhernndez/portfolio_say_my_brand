@@ -12,8 +12,8 @@ const Rooms = () => {
   const { adults, kids, startDate, endDate } = router.query;
   const guests = parseInt(adults) + parseInt(kids);
   // Formatted Start and endd Date
-  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
-  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
+  const formattedStartDate = format(new Date(startDate), "dd/MM/yyyy");
+  const formattedEndDate = format(new Date(endDate), "dd/MM/yyyy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   // Users data provide in the Home page

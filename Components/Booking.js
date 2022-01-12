@@ -16,9 +16,6 @@ const Booking = () => {
   // const formattedStartDate = format(new Date(startDate), "dd/MM/yy");
   // const formattedEndDate = format(new Date(endDate), "dd/MM/yy");
 
-  console.log(startDate);
-  console.log(endDate);
-
   const [adults, setAdults] = useState(1);
   const [kids, setKids] = useState(0);
   const router = useRouter();
@@ -84,7 +81,6 @@ const Booking = () => {
         <>
           <div className="text-center">
             <DatePicker
-              className="text-center"
               selected={startDate}
               onChange={onChange}
               startDate={startDate}
