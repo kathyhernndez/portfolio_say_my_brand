@@ -7,6 +7,7 @@ const HeroImage = () => {
         src="https://i.imgur.com/Av1Eswh.jpg"
         layout="fill"
         objectFit="cover"
+        priority
       />
     </div>
   );

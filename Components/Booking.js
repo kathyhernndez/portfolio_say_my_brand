@@ -129,12 +129,19 @@ const Booking = () => {
           </div>
           {roomsSlider &&
             roomList?.map(
-              ({ id, room_title, room_description, room_image }) => (
+              ({
+                id,
+                room_title,
+                room_description,
+                room_image,
+                room_price,
+              }) => (
                 <RoomSlider
                   key={id}
                   room_title={room_title}
                   room_description={room_description}
                   room_image={room_image}
+                  room_price={room_price}
                 />
               )
             )}
