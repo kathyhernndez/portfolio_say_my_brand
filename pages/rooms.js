@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import Header from "../Components/Header";
-import RoomSlider from "../Components/RoomSlider";
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
+import RoomDetailPage from "../Components/RoomDetailPage";
 
 const Rooms = () => {
   const router = useRouter();
@@ -42,7 +42,7 @@ const Rooms = () => {
           <div className="flex flex-col gap-5 m-5">
             {roomList?.map(
               ({ id, room_title, room_description, room_image }) => (
-                <RoomSlider
+                <RoomDetailPage
                   key={id}
                   room_title={room_title}
                   room_description={room_description}
