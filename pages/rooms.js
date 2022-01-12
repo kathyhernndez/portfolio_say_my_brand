@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import Header from "../Components/Header";
-import RoomSlider from "../Components/RoomSlider";
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
+import RoomDetailPage from "../Components/RoomDetailPage";
 
 const Rooms = () => {
   const router = useRouter();
@@ -12,8 +12,8 @@ const Rooms = () => {
   const { adults, kids, startDate, endDate } = router.query;
   const guests = parseInt(adults) + parseInt(kids);
   // Formatted Start and endd Date
-  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
-  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
+  const formattedStartDate = format(new Date(startDate), "dd/MM/yyyy");
+  const formattedEndDate = format(new Date(endDate), "dd/MM/yyyy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   // Users data provide in the Home page
@@ -42,7 +42,7 @@ const Rooms = () => {
           <div className="flex flex-col gap-5 m-5">
             {roomList?.map(
               ({ id, room_title, room_description, room_image }) => (
-                <RoomSlider
+                <RoomDetailPage
                   key={id}
                   room_title={room_title}
                   room_description={room_description}

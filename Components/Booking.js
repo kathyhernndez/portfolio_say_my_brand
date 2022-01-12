@@ -16,9 +16,6 @@ const Booking = () => {
   // const formattedStartDate = format(new Date(startDate), "dd/MM/yy");
   // const formattedEndDate = format(new Date(endDate), "dd/MM/yy");
 
-  console.log(startDate);
-  console.log(endDate);
-
   const [adults, setAdults] = useState(1);
   const [kids, setKids] = useState(0);
   const router = useRouter();
@@ -84,7 +81,6 @@ const Booking = () => {
         <>
           <div className="text-center">
             <DatePicker
-              className="text-center"
               selected={startDate}
               onChange={onChange}
               startDate={startDate}
@@ -129,12 +125,19 @@ const Booking = () => {
           </div>
           {roomsSlider &&
             roomList?.map(
-              ({ id, room_title, room_description, room_image }) => (
+              ({
+                id,
+                room_title,
+                room_description,
+                room_image,
+                room_price,
+              }) => (
                 <RoomSlider
                   key={id}
                   room_title={room_title}
                   room_description={room_description}
                   room_image={room_image}
+                  room_price={room_price}
                 />
               )
             )}
